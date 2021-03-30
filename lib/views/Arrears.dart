@@ -31,12 +31,11 @@ class _ArrearsState extends State<Arrears> {
   String selectedKey;
 
   List<String> keys = <String>[
-    'Low',
-    'Medium',
-    'High',
+    'January',
+    'February',
+    'March',
+    'April'
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -234,27 +233,6 @@ class _ArrearsState extends State<Arrears> {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.dashboard_outlined,
-                        color: Colors.white70,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Dashboard',
-                        style: Theme.of(context).textTheme.title,
-                      ),
-                    ],
-                  ),
-                ),
-                Divider(
-                  color: Colors.white70,
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Row(
-                    children: [
-                      Icon(
                         Icons.book_outlined,
                         color: Colors.white70,
                       ),
@@ -363,8 +341,16 @@ class _ArrearsState extends State<Arrears> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('Total Appartments'),
-                                      Text('375'),
+                                      Text('Total Appartments',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w800
+                                        ),),
+                                      Text('375',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w800
+                                        ),),
                                     ],
                                   ),
                                   SizedBox(
@@ -409,7 +395,7 @@ class _ArrearsState extends State<Arrears> {
                             child: Container(
                               // width: 300,
                               height: 300,
-                              padding: EdgeInsets.all(25),
+                              padding: EdgeInsets.all(20),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(6),
@@ -426,18 +412,23 @@ class _ArrearsState extends State<Arrears> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('Total Appartments'),
-                                      Text('375'),
+                                      Text('Overview',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800
+                                      ),),
+                                    OutlineButton(
+                                      color: Colors.grey,
+                                      child: Text("Monthly"),
+                                      onPressed: (){},
+                                    )
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 30,
+                                    height: 20,
                                   ),
-
-                              BarChartSample2(),
-
-
-                            ],
+                                  BarChartSample2(),
+                                ],
                               ),
                             ),
                           ),
@@ -451,7 +442,7 @@ class _ArrearsState extends State<Arrears> {
                               child: Column(
                                 children: [
                                   Container(
-                                    width: 300,
+                                    width: 350,
                                     height: 40,
                                     padding:
                                         EdgeInsets.only(left: 10, right: 10),
@@ -465,13 +456,16 @@ class _ArrearsState extends State<Arrears> {
                                       children: [
                                         Text('Add Property'),
                                         Container(
-                                          //width: 20,
+                                            //width: 20,
                                             //height: 20,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xff27679A),
                                             ),
-                                            child: Icon(Icons.add,color: Colors.white,)),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: Colors.white,
+                                            )),
                                       ],
                                     ),
                                   ),
@@ -479,7 +473,7 @@ class _ArrearsState extends State<Arrears> {
                                     height: 20,
                                   ),
                                   Container(
-                                    width: 300,
+                                    width: 350,
                                     height: 190,
                                     padding:
                                         EdgeInsets.only(left: 10, right: 10),
@@ -554,19 +548,24 @@ class _ArrearsState extends State<Arrears> {
                                     children: [
                                       Text(
                                         'Payments',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w800
+                                          ),
                                       ),
                                       Spacer(),
                                       Container(
-                                        //width: 20,
-                                       // height: 40,
-                                        padding: EdgeInsets.all(5),
+                                          //width: 20,
+                                          // height: 40,
+                                          padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                             //shape: BoxShape.circle,
-                                            color: Color(0xff27679A).withOpacity(0.1),
+                                            color: Color(0xff27679A)
+                                                .withOpacity(0.1),
                                           ),
-                                          child: Icon(Icons.search,)),
+                                          child: Icon(
+                                            Icons.search,
+                                          )),
                                       SizedBox(
                                         width: 10,
                                       ),
@@ -607,112 +606,193 @@ class _ArrearsState extends State<Arrears> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 30,
+                                    height: 20,
                                   ),
                                   Container(
                                     height: 40,
                                     padding:
-                                        EdgeInsets.only(left: 15, right: 15),
+                                        EdgeInsets.only(left: 10, right: 10),
                                     decoration: BoxDecoration(
-                                        color: Color(0xff27679A),
-                                        ),
+                                      color: Color(0xff27679A),
+                                    ),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Property",
+                                              "No.",
                                               style: TextStyle(
                                                 color: Colors.white,
-
                                               ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 2,
                                           child: SizedBox(
                                             child: Text(
-                                              "Room",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Property".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Tenant Name",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Room".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 2,
                                           child: SizedBox(
                                             child: Text(
-                                              "Rent",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Tenant Name".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Date",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Rent".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
-
+                                        Expanded(
+                                          flex: 1,
+                                          child: SizedBox(
+                                            child: Text(
+                                              "Date".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  ListView.separated(
-                                      itemCount: 3,
-                                      scrollDirection: Axis.vertical,
-                                      shrinkWrap: true,
-                                      separatorBuilder:
-                                          (BuildContext context, int index) {
-                                        return SizedBox(
-                                          height: 10,
-                                        );
-                                      },
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return Container(
-                                          //height: 50,
-                                          padding: EdgeInsets.only(
-                                              left: 15, right: 15),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-                                            ],
-                                          ),
-                                        );
-                                      }),
+                                  Expanded(
+                                    child: ListView.separated(
+                                        itemCount: 4,
+                                        scrollDirection: Axis.vertical,
+                                        shrinkWrap: true,
+                                        separatorBuilder:
+                                            (BuildContext context, int index) {
+                                          return SizedBox(
+                                            height: 10,
+                                          );
+                                        },
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          if (index != 1 && index % 2 == 0) {
+                                              return Container(
+                                              //height: 50,
+                                              padding: EdgeInsets.only(
+                                                  left: 10, right: 10,top: 15,bottom: 15),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffF4F8FB),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('1'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              'Monte Carlo'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('A102'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              '320 In Stock'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child:
+                                                              Text('\$29,192'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('11 Apr'))),
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                          else
+                                            {
+                                              return Container(
+                                                //height: 50,
+                                                padding: EdgeInsets.only(
+                                                    left: 10, right: 10,top: 15,bottom: 15),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                                  children: [
+                                                    Expanded(
+                                                        flex: 1,
+                                                        child: SizedBox(
+                                                            child: Text('1'))),
+                                                    Expanded(
+                                                        flex: 2,
+                                                        child: SizedBox(
+                                                            child: Text(
+                                                                'Monte Carlo'))),
+                                                    Expanded(
+                                                        flex: 1,
+                                                        child: SizedBox(
+                                                            child: Text('A102'))),
+                                                    Expanded(
+                                                        flex: 2,
+                                                        child: SizedBox(
+                                                            child: Text(
+                                                                '320 In Stock'))),
+                                                    Expanded(
+                                                        flex: 1,
+                                                        child: SizedBox(
+                                                            child:
+                                                            Text('\$29,192'))),
+                                                    Expanded(
+                                                        flex: 1,
+                                                        child: SizedBox(
+                                                            child: Text('11 Apr'))),
+                                                  ],
+                                                ),
+                                              );
+                                            }
+                                        }),
+                                  ),
                                 ],
                               ),
                             ),
@@ -744,7 +824,9 @@ class _ArrearsState extends State<Arrears> {
                                       Text(
                                         'Transaction',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w800
+                                        ),
                                       ),
                                       Spacer(),
                                       Container(
@@ -753,9 +835,12 @@ class _ArrearsState extends State<Arrears> {
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                             //shape: BoxShape.circle,
-                                            color: Color(0xff27679A).withOpacity(0.1),
+                                            color: Color(0xff27679A)
+                                                .withOpacity(0.1),
                                           ),
-                                          child: Icon(Icons.search,)),
+                                          child: Icon(
+                                            Icons.search,
+                                          )),
                                       SizedBox(
                                         width: 10,
                                       ),
@@ -796,12 +881,12 @@ class _ArrearsState extends State<Arrears> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 30,
+                                    height: 20,
                                   ),
                                   Container(
                                     height: 40,
                                     padding:
-                                    EdgeInsets.only(left: 15, right: 15),
+                                    EdgeInsets.only(left: 10, right: 10),
                                     decoration: BoxDecoration(
                                       color: Color(0xff27679A),
                                     ),
@@ -810,98 +895,179 @@ class _ArrearsState extends State<Arrears> {
                                       MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Property",
+                                              "No.",
                                               style: TextStyle(
                                                 color: Colors.white,
-
                                               ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 2,
                                           child: SizedBox(
                                             child: Text(
-                                              "Room",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Property".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Tenant Name",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Room".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 2,
                                           child: SizedBox(
                                             child: Text(
-                                              "Rent",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Tenant Name".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Expanded(
+                                          flex: 1,
                                           child: SizedBox(
                                             child: Text(
-                                              "Date",style: TextStyle(
-                                              color: Colors.white,
-
-                                            ),
+                                              "Rent".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
-
+                                        Expanded(
+                                          flex: 1,
+                                          child: SizedBox(
+                                            child: Text(
+                                              "Date".toUpperCase(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  ListView.separated(
-                                      itemCount: 3,
-                                      scrollDirection: Axis.vertical,
-                                      shrinkWrap: true,
-                                      separatorBuilder:
-                                          (BuildContext context, int index) {
-                                        return SizedBox(
-                                          height: 10,
-                                        );
-                                      },
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return Container(
-                                          //height: 50,
-                                          padding: EdgeInsets.only(
-                                              left: 15, right: 15),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-
-                                              Expanded(child: SizedBox(child: Text('Name'))),
-                                            ],
-                                          ),
-                                        );
-                                      }),
+                                  Expanded(
+                                    child: ListView.separated(
+                                        itemCount: 4,
+                                        scrollDirection: Axis.vertical,
+                                        shrinkWrap: true,
+                                        separatorBuilder:
+                                            (BuildContext context, int index) {
+                                          return SizedBox(
+                                            height: 10,
+                                          );
+                                        },
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          if (index != 1 && index % 2 == 0) {
+                                            return Container(
+                                              //height: 50,
+                                              padding: EdgeInsets.only(
+                                                  left: 10, right: 10,top: 15,bottom: 15),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffF4F8FB),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('1'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              'Monte Carlo'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('A102'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              '320 In Stock'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child:
+                                                          Text('\$29,192'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('11 Apr'))),
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                          else
+                                          {
+                                            return Container(
+                                              //height: 50,
+                                              padding: EdgeInsets.only(
+                                                  left: 10, right: 10,top: 15,bottom: 15),
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('1'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              'Monte Carlo'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('A102'))),
+                                                  Expanded(
+                                                      flex: 2,
+                                                      child: SizedBox(
+                                                          child: Text(
+                                                              '320 In Stock'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child:
+                                                          Text('\$29,192'))),
+                                                  Expanded(
+                                                      flex: 1,
+                                                      child: SizedBox(
+                                                          child: Text('11 Apr'))),
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                        }),
+                                  ),
                                 ],
                               ),
                             ),
